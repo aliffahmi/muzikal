@@ -122,7 +122,7 @@ class Room extends Component {
             Host: {this.state.isHost.toString()}
           </Typography>
         </Grid>
-        {this.renderSettingsButton()}
+        {this.state.isHost ? this.renderSettingsButton() : null}
         <Grid item xs={12} align='center'>
           <Button
             variant='contained'
