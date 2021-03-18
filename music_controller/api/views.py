@@ -135,7 +135,7 @@ class UpdateRoom(APIView):
             room = queryset[0]
             # check if the user requesting is the host of the room
             user_id = self.request.session.session_key
-            if room_host != user_id:
+            if room.host != user_id:
                 return Response({'msg': 'Only host can do this'}, status=status.HTTP_403_FORBIDDEN)
             
             room.guest_can_pause = guest_can_pause
